@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <title>Exploratory Data Analysis (EDA) in R</title>
+</head>
+<nav>
+    <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="#contact">Contact Information</a></li>
+        <li><a href="resume.html">Resume</a></li>
+        <li><a href="blog.html">Blog</a></li>
+    </ul>
+</nav>
+<body>
+    <header>
+        <h1>Exploratory Data Analysis (EDA) in R</h1>
+        <p>Published on: 12/14/2023</p>
+    </header>
+    
+    <section id="eda-content">
+        <h2>Introduction</h2>
+        <p>In this blog post, we will perform Exploratory Data Analysis (EDA) on a randomly generated dataset using R.</p>
+
+        <h2>1. Overview of the Dataset</h2>
+        <p>Let's start by loading and examining the structure of our dataset.</p>
+        <pre>
+            <code>
+# Load necessary libraries
+library(tidyverse)
+
+# Generate a random dataset
+set.seed(123)
+data <- data.frame(
+  Age = rnorm(100, mean = 30, sd = 5),
+  Income = rnorm(100, mean = 50000, sd = 10000),
+  Experience = rnorm(100, mean = 5, sd = 2),
+  Satisfaction = runif(100, min = 1, max = 10),
+  Score = rnorm(100, mean = 70, sd = 10)
+)
+
+# Display the first few rows of the dataset
+head(data)
+            </code>
+        </pre>
+
+        <h2>2. Exploring Age</h2>
+        <p>Visualize the distribution of the 'Age' variable.</p>
+        <pre>
+            <code>
+# Exploring Age
+ggplot(data, aes(x = Age)) +
+  geom_histogram(fill = 'blue', bins = 20) +
+  labs(title = 'Distribution of Age', x = 'Age', y = 'Frequency')
+            </code>
+        </pre>
+        <img src="age.png" alt="Age Distribution">
+
+        <h2>3. Exploring Income</h2>
+        <p>Visualize the distribution of the 'Income' variable.</p>
+        <pre>
+            <code>
+# Exploring Income
+ggplot(data, aes(x = Income)) +
+  geom_histogram(fill = 'green', bins = 20) +
+  labs(title = 'Distribution of Income', x = 'Income', y = 'Frequency')
+            </code>
+        </pre>
+        <img src="income.png" alt="Income Distribution">
+
+        <h2>4. Exploring Experience</h2>
+        <p>Visualize the distribution of the 'Experience' variable.</p>
+        <pre>
+            <code>
+# Exploring Experience
+ggplot(data, aes(x = Experience)) +
+  geom_histogram(fill = 'orange', bins = 20) +
+  labs(title = 'Distribution of Experience', x = 'Experience', y = 'Frequency')
+            </code>
+        </pre>
+        <img src="experience.png" alt="Experience Distribution">
+
+        <h2>5. Exploring Satisfaction</h2>
+        <p>Visualize the distribution of the 'Satisfaction' variable.</p>
+        <pre>
+            <code>
+# Exploring Satisfaction
+ggplot(data, aes(x = Satisfaction)) +
+  geom_histogram(fill = 'purple', bins = 20) +
+  labs(title = 'Distribution of Satisfaction', x = 'Satisfaction', y = 'Frequency')
+            </code>
+        </pre>
+        <img src="satisfaction.png" alt="Satisfaction Distribution">
+
+        <h2>6. Exploring Score</h2>
+        <p>Visualize the distribution of the 'Score' variable.</p>
+        <pre>
+            <code>
+# Exploring Score
+ggplot(data, aes(x = Score)) +
+  geom_histogram(fill = 'red', bins = 20) +
+  labs(title = 'Distribution of Score', x = 'Score', y = 'Frequency')
+            </code>
+        </pre>
+        <img src="score.png" alt="Score Distribution">
+
+        <h2>Conclusion</h2>
+        <p>This concludes our Exploratory Data Analysis on the randomly generated dataset. EDA is a crucial step in understanding the characteristics of your data and can guide further analysis and modeling.</p>
+    </section>
+
+    <footer>
+        <p>&copy; 2023 Shiva Kumar - Data Scientist</p>
+    </footer>
+</body>
+</html>
